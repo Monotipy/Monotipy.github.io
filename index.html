@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Магазин Вещей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script>
+        function showhide(id) {
+            var e = document.getElementById(id);
+            e.style.display = (e.style.display == 'none') ? 'block' : 'none';
+        }
+    </script>
+
+    <!-- Шапка -->
+    <header class="header">
+        <a href="index.html"><img class="header__logo" width="75px" src="images/krest.png"></a>
+        <div class="header__inner">
+            <ul class="menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#ctlg">Каталог</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Меню -->
+    <!--<ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="#ctlg">Каталог</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+    <hr>-->
+
+    <h1>МАГАЗИН ВЕЩЕЙ</h1>
+    <h3>Теперь на сайте!</h3>
+
+    <!-- Каталог -->
+    <hr><h1 id="ctlg">Каталог</h1>
+
+    <hr><br><a class="a2" href="pg_1.html"><img src="https://cdn.img-gorod.ru/310x500/nomenclature/28/845/2884510.jpg" width="100px" border="2px"></a>
+    <a href="pg_1.html"><h2>Мечтают ли андроиды об электроовцах?</h2></a>
+
+    <hr><br><a class="a2"  href="pg_2.html"><img src="https://cdn.img-gorod.ru/310x500/nomenclature/28/631/2863128.jpg" width="100px" border="2px"></a>
+    <a href="pg_2.html"><h2>Кровь изгнанника. Драконы Терры. Книга 1</h2></a>
+
+    <hr><br><a class="a2"  href="pg_3.html"><img src="https://cdn.img-gorod.ru/310x500/nomenclature/27/181/2718158.jpg" width="100px" border="2px"></a>
+    <a href="pg_3.html"><h2>Я, робот</h2></a>
+
+    <!-- Таблица 4*5 -->
+    <hr>
+    <ul class="character" id="box" style="display: 0;">
+            <table width="500" id="uniquename">
+                <tr>
+                    <td colspan="4" height="40px" align="middle">
+                    <li><h3>Оценки пользователей</h3></li></td>
+                    <td rowspan="7" style='-moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg); -o-transform: rotate(-90deg);transform: rotate(-90deg);'>ПОЛЕЗНАЯ СТАТИСТИКА</td>
+                </tr>
+                <tr>
+                    <td><li>За последние:</li></td>
+                    <td>День</td>
+                    <td>Неделю</td>
+                    <td>Месяц</td>
+                </tr>
+                <tr>
+                    <td><li>5 &#11088&#11088&#11088&#11088&#11088;</li></td>
+                    <td>230</td>
+                    <td>23</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><li>4 &#11088&#11088&#11088&#11088;</li></td>
+                    <td>230</td>
+                    <td>23</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><li>3 &#11088&#11088&#11088;</li></td>
+                    <td>230</td>
+                    <td>23</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><li>2 &#11088&#11088</li></td>
+                    <td>230</td>
+                    <td>23</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><li>1 &#11088;</li></td>
+                    <td>230</td>
+                    <td>23</td>
+                    <td>2</td>
+                </tr>
+            </table>
+        </ul>
+
+    <!-- Footer -->
+    <footer class="footer"><h class="footer_text">2023 &copy;Все права защищены</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="scripts.js"></script>-->
+    <script>
+        $(function () {
+            let header = $('.header');
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1) {
+                    header.addClass('header_fixed');
+                } else {
+                    header.removeClass('header_fixed');
+                }
+            });
+        });
+
+        $(function () {
+            let header = $('.header');
+            let hederHeight = header.height(); // вычисляем высоту шапки
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1) {
+                    header.addClass('header_fixed');
+                    $('body').css({
+                        'paddingTop': hederHeight + 'px' // делаем отступ у body, равный высоте шапки
+                    });
+                } else {
+                    header.removeClass('header_fixed');
+                    $('body').css({
+                        'paddingTop': 0 // удаляю отступ у body, равный высоте шапки
+                    })
+                }
+            });
+        });
+
+        if ($(this).scrollTop() > 300) {
+            header.css({
+                'padding': '5px 0',
+                'background': '#f6ffdb',
+                'transition': '.3s'
+            });
+        } else {
+            header.css({
+                'padding': '15px 0',
+                'background': '#ffffff',
+                'transition': '.3s'
+            });
+        }
+    </script>
+
+</body>
+</html>

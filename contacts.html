@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header class="header">
+  <a href="index.html"><img class="header__logo" width="75px" src="images/krest.png"></a>
+  <div class="header__inner">
+    <ul class="menu">
+        <li><a href="index.html">Главная/Каталог</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </div>
+  </header>
+
+    <!-- Меню -->
+    <!--<ul class="menu">
+        <li><a href="index.html">Главная/Каталог</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+    <hr>-->
+
+    <!-- Основной контент -->
+    <h2>Напишите нам!</h2>
+    <div>
+        <form action="action_page.php">
+            <div class="container">
+                <p>Заполните форму и задайте вопрос</p>
+
+                <label for="namee"><b>Имя</b></label>
+                <input type="text" class="colortext" placeholder="Введите имя" name="namee" required>
+
+                <label for="email"><b>Почта</b></label>
+                <input type="text" placeholder="Введите почту" name="email" required>
+
+                <label for="title"><b>Тема вопроса</b></label>
+                <input type="text" placeholder="Введите что-нибудь" name="title" required>
+
+                <label for="textt"><b>Опишите вопрос</b></label>
+                <input type="text" placeholder="Текст сообщения" name="textt" required>
+
+                <p>Отправляя сообщение вы соглашаетесь с <a href="#">Права и Политика</a>.</p>
+                <button type="submit" class="registerbtn">Отправить</button>
+            </div>
+        </form>
+    </div>
+
+        <!-- Адрес -->
+        <hr><h2>Адрес</h2>
+        <ul>
+            <li>Наш телефон: +7(999)999-99-99</li>
+            <li>г.Карюга, ул.Скоринова,11</li>
+            <li>Email: magazineveshei@gmail.com</li>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d989.4557550358056!2d39.463200490293275!3d45.457653781657854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1698159762228!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <br>покупая в нашем розничном магазине,
+            вы поддерживаете общество анонимного алкоголика(ака Директора фабрики слёз)</li>
+        </ul>
+
+        <!-- Footer -->
+        <footer class="footer"><h class="footer_text">2023 &copy;Все права защищены</footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- <script src="scripts.js"></script>-->
+        <script>
+            $(function () {
+                let header = $('.header');
+
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 1) {
+                        header.addClass('header_fixed');
+                    } else {
+                        header.removeClass('header_fixed');
+                    }
+                });
+            });
+
+            $(function () {
+                let header = $('.header');
+                let hederHeight = header.height(); // вычисляем высоту шапки
+
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 1) {
+                        header.addClass('header_fixed');
+                        $('body').css({
+                            'paddingTop': hederHeight + 'px' // делаем отступ у body, равный высоте шапки
+                        });
+                    } else {
+                        header.removeClass('header_fixed');
+                        $('body').css({
+                            'paddingTop': 0 // удаляю отступ у body, равный высоте шапки
+                        })
+                    }
+                });
+            });
+
+            if ($(this).scrollTop() > 300) {
+                header.css({
+                    'padding': '5px 0',
+                    'background': '#f6ffdb',
+                    'transition': '.3s'
+                });
+            } else {
+                header.css({
+                    'padding': '15px 0',
+                    'background': '#ffffff',
+                    'transition': '.3s'
+                });
+            }
+        </script>
+
+</body>
+</html>
